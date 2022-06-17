@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transiciones</title>
+    <style>
+        body{font-family: Verdana, Geneva, Tahoma, sans-serif;}
+        #efectos div {
+            /* 0. Asignar los estilos base a los 5 divs */
+            width: 150px;
+            height: 50px;
+            color: white;
+            font-size: small;
+            text-align: center;
+            margin-top: 10px;
+            border: 1px solid #000000;
+            background-color: green;
+            /* 1. declaración de transicion indicando PROPIEDAD y DURACION*/
+            transition-property: width;
+            /*1.1. Si pone All para afectar a todas las propiedades o una lista de propiedades: widt 2s, height 4s */
+            transition-duration: 1s;
+            /* 1.2 declaración abreviada de 1*/
+            /*transition: width 2s;*/
+            /* 3.- Agregado DELAY (retardo)*/
+            transition-delay: 1s;
+            /* 3.1 - Se indica como aplicar los preficos para esta propiedad*/
+            -moz-transition-delay: 1s;
+            -o-transition-delay: 1s;
+            -webkit-transition-delay: 1s;
+        }
+        #efectos div:hover {
+            width: 300px;
+        }
+
+        /* 2.- Agregando Funciones de Curva de velocidad*/
+        #efectos div:nth-child(1) {
+            transition-timing-function: linear;
+            /* 2.1 velocidad constante */
+        }
+
+        #efectos div:nth-child(2) {
+            transition-timing-function: ease;
+            /* 2.2 lento - rápido - default*/
+        }
+
+        #efectos div:nth-child(3) {
+            transition-timing-function: ease-in;
+            /* 2.3 inicio lento*/
+        }
+
+        #efectos div:nth-child(4) {
+            transition-timing-function: ease-out;
+            /* 2.4 final lento*/
+        }
+
+        #efectos div:nth-child(5) {
+            transition-timing-function: ease-in-out;
+            /* 2.5 inicio y final son lentos*/
+        }
+
+        #efectos div:nth-child(6) {
+            transition-timing-function: cubic-bezier(.15, .78, .58, 1);
+            /* 2.5 cubic-bezier
+            . Los valores numéricos deben ser enttre 0 y 1.
+            La curva bezier está definida por 4 puntos: P0, P1, P2 y P3 donde P0 y P3 son el inicio (0,0) y final (1,1) en plano de coordenadas. 
+            Curva Bezier puede recrear todos los movimientos indicados desde 2.1 a 2.5. Ejemplo: 
+            ease = lento el inicio , entonces rápido y termina lentamente = bezier (0.25, 0.1, 0.25, 1)
+            linear => bezier (0,0,1,1)*/
+        }
+
+      
+
+        /* 4.- Aplicando transiciones a una imagen de un carro*/
+        #aplicacion{clear:both}
+        #aplicacion .btn {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+
+            background-color: #4B664D;
+            font-size: medium;
+            text-align: center;
+            color: white;
+            /*margin: 0 auto;*/
+            width: 150px;
+            height: 40px;
+            /*4.1 aplicamos la transicción en todas las propiedades y con duración de 2 segundos*/
+            transition: all 0.5s;
+        }
+
+        #aplicacion .btn:hover {
+            background-color: #4FB355;
+            color:#E6D840;
+            /*transition-timing-function: cubic-bezier(.04, .21, .24, 1);*/
+            transition-timing-function: ease-out;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Transiciones con CSS 3</h1>
+    <h4>Instrucciones</h4>
+    <p>Pasa el puntero del ratón por las cajas y manténlo por 2 segundos para ver el efeto.</p>
+    <div id="efectos">
+        <div>linear <br>(constante)</div>
+        <div>ease <br>(lento - rápido - lento)</div>
+        <div>ease-in <br>(lento - default)</div>
+        <div>ease-out <br>(defalt-lento)</div>
+        <div>ease-in-out</div>
+        <div>bezier</div>
+    </div>
+    <h4>Aplicación a botones</h4>
+    <div id="aplicacion">
+        <div class="btn">Aplica Ahora!</div>
+    </div>
+   
+
+</body>
+
+</html>

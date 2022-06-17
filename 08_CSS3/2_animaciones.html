@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.animacion{
+            position:relative;
+            width: 80px;
+            height: 80px;
+            background: lawngreen;
+
+            /*1.- Declarando la animación*/
+            animation-name:pepito;
+            /* 3.- Declarando la DURACION */
+            animation-duration: 4s;
+            /* 4.- Declarando la retardo con DELAY */
+            /*animation-delay: 2s;*/
+            /* 5.- Declarando el Numero de interacciónes con COUNT (numero_itraciones, infinite)*/
+            /*animation-iteration-count: 4;*/
+            /* 6.- Declarando la dirección (reverse, alternate, normal, alternate-reverse)*/
+            /*animation-direction: reverse;*/
+            /* 7.- Declarando la función de velocidad (linear, ease, ease-in, ease-out, bezier)*/
+            animation-timing-function: ease;
+            
+        }
+        /* 2.- Declarando los keyframes con FROM y TO a la animación creada en 1.-*/
+        @keyframes pepito{
+            
+            from {background: lawngreen;}
+            to {background: red;}
+            /* desplazamiento*/
+            /*
+            from {left:0px; top:0px}
+            to {left:500px; top:0px}
+            */
+            
+            /* 2.2- Declarando los keyframes específicos a la animación creada en 1.-*/
+            /*
+            0% {
+                background-color: lawngreen;
+            }
+            25%{
+                background: red;
+            }
+            50%{
+                background: blue;
+            }
+            75%{
+                background:yellow;
+            }
+            100%{
+                background: yellowgreen;
+            }
+            
+            */
+            
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Animaciones CSS 3</h1>
+    <h4>Instrucciones</h4>
+    <p>Recarga la página para ver el efecto</p>
+    <div class="animacion"></div>
+</body>
+</html>

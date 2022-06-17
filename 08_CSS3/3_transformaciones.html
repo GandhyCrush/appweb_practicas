@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 80px;
+            height: 80px;
+            background: #7e2508;
+            border: 1px solid #FF0000;
+            text-align: center;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+            
+            /* 1.- Declarando una transición para la transformación */
+            transition: transform 2s;
+            /* 2.- fijar el origen del cambio de posición (se puede poner 50% 50%)*/
+            transform-origin: left top;
+            /*transform-origin: 50% 50%;*/
+        }
+
+        /* 3.- MOVER */
+        div.transladar:hover {
+            transform: translate(200px, 0);
+        }
+
+        /* 4.- ROTAR*/
+        div.rotar:hover {
+            transform: rotate(-45deg);
+        }
+
+        /* 5.- ESCALAR */
+        /* Se puede especificar el eje de escalamiento con scaleX(grados) y scaleY(grados)*/
+        div.escalar:hover {
+            transform: scale(0.5, 0.5);
+        }
+
+        /* 6.- SEKEW en Y */
+        div.inclinar:hover {
+            transform: skewY(25deg);
+            /*transform:skew(0,25deg); otra forma de expresar la inclinación*/
+        }
+
+        /* 7.- MATRIX */
+        /* matrix (scaleX, skewY, skewX, scaleY, translateX, translateY ) */
+        div.matrix:hover {
+            transform: matrix(0.5, 0.3, 0.3, 0.5, 300, 0);
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Transformaciones CSS 3</h1>
+    <h4>Instrucciones</h4>
+    <p>Pasa el puntero del ratón por las cajas</p>
+    <h2>Mover (translate)</h2>
+    <div class="transladar">uno</div>
+    <h2>Rotar (rotate)</h2>
+    <div class="rotar">dos</div>
+    <h2>Escalar (scale)</h2>
+    <div class="escalar">tres</div>
+    <h2>Inclinar (skew)</h2>
+    <div class="inclinar">cuatro</div>
+    <h2>Combinación de transformaciones (matrix)</h2>
+    <div class="matrix">cinco</div>
+
+</body>
+
+</html>
