@@ -13,9 +13,7 @@
 
     <title>Mi facebook</title>
     <style>
-        /* {
-            border: 1px solid #000000;
-        }*/
+        /*{border: 1px solid #000000;}*/
         .color-azul {background-color: #446cb3;}
         .color-gris {background-color: #f0f2f5;}
         .border-gris {border: 1px solid #f0f2f5;}
@@ -46,7 +44,7 @@
         <!-- FILA: 3 columnas (lista opciones, publicaciones, anuncios de publicidad )-->
         <div class="row">
             <!-- Columna: Lista de Opciones-->
-            <div class="col-lg-3 d-none d-lg-block">
+            <div class="col d-none col-lg-3 d-lg-block">
                 <ul>
                     <li>Carlos Iñiguez</li>
                     <li>Amigos</li>
@@ -57,10 +55,10 @@
                 </ul>
             </div>
             <!-- Columna: publicaciones -->
-            <div class="col-12 col-md-6">
+            <div class="col">
                 <div class="container-fluid">
                     <!-- Fila: ¿Qué estas pensando Carlos?-->
-                    <div class="row rounded bg-white">
+                    <div class="row bg-white rounded">
                         <!-- columna: Avatar-->
                         <div class="col-1">
                             <div class="boton rounded-circle color-gris float-left m-2">
@@ -69,7 +67,8 @@
                         </div>
                         <!-- Columna: ¿Qué estas pensando Carlos?-->
                         <div class="col-11">
-                            <div class="h-75 float-left border rounded-pill m-2 color-gris"> ¿Qué estas pensando Carlos?</div>
+                            <div class="color-gris rounded-pill border float-left h-75 p-2 m-2"> ¿Qué estas
+                                pensando Carlos?</div>
                         </div>
                     </div>
                     <!-- Fila: publicación de Firulais-->
@@ -77,9 +76,9 @@
                         <div class="col">
                             <!-- publicacion -->
                             <div class="border bg-white rounded mt-4 p-4">
-                                <img class="" src="perro.jpg" alt="Generic placeholder image">
+                                <img class="img-fluid" src="perro.jpg" alt="Generic placeholder image">
                                 <div>
-                                    <h5 class="mt-0">Las vacaciones de Firulais</h5>
+                                    <h5 class="">Las vacaciones de Firulais</h5>
                                     <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
                                         sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra
                                         turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue
@@ -92,20 +91,20 @@
                 </div>
             </div>
             <!-- Columna: anuncios de publicidad -->
-            <div class="col-lg-3 d-none d-lg-block">
-                <div class="bg-white mw-100 border rounded float-left p-2 m-3 text-truncate">Lorem ipsum dolor sit amet
+            <div class="col d-none d-lg-block col-lg-3">
+                <div class="bg-white border rounded p-2 m-3 mw-100 text-truncate">Lorem ipsum dolor sit amet
                     consectetur adipisicing elit. Eos laborum accusantium unde deleniti architecto. Suscipit unde
                     excepturi quia sint at veritatis. Molestias consequuntur distinctio ullam quisquam maxime nostrum
                     reprehenderit cumque.</div>
-                <div class="bg-white mw-100 border rounded float-left p-2 m-3">Lorem ipsum dolor sit amet
+                <div class="bg-white border rounded p-2 m-3 mw-100">Lorem ipsum dolor sit amet
                     consectetur adipisicing elit. Eos laborum accusantium unde deleniti architecto. Suscipit unde
                     excepturi quia sint at veritatis. Molestias consequuntur distinctio ullam quisquam maxime nostrum
                     reprehenderit cumque.</div>
-                <div class="bg-white mw-100 border rounded float-left p-2 m-3">Lorem ipsum dolor sit amet
+                <div class="bg-white border rounded p-2 m-3 mw-100">Lorem ipsum dolor sit amet
                     consectetur adipisicing elit. Eos laborum accusantium unde deleniti architecto. Suscipit unde
                     excepturi quia sint at veritatis. Molestias consequuntur distinctio ullam quisquam maxime nostrum
                     reprehenderit cumque.</div>
-                <div class="bg-white mw-100 border rounded float-left p-2 m-3">Lorem ipsum dolor sit amet
+                <div class="bg-white border rounded p-2 m-3 mw-100">Lorem ipsum dolor sit amet
                     consectetur adipisicing elit. Eos laborum accusantium unde deleniti architecto. Suscipit unde
                     excepturi quia sint at veritatis. Molestias consequuntur distinctio ullam quisquam maxime nostrum
                     reprehenderit cumque.</div>
@@ -114,8 +113,7 @@
         </div>
     </div>
 
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    
 </body>
 
 </html>
