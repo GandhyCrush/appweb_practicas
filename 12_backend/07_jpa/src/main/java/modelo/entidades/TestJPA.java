@@ -8,7 +8,7 @@ public class TestJPA {
 
 	public static void main(String[] args) {
 		EntityManager em =  Persistence.createEntityManagerFactory("07_jpa").createEntityManager();
-		/*
+		
 		//INSERCION
 		Persona p = new Persona();
 		p.setNombre("Carlos");
@@ -19,7 +19,7 @@ public class TestJPA {
 		em.getTransaction().commit();
 		
 		//CONSULTA
-		
+		/*
 		Persona personaConsultada =  em.find(Persona.class, 1);
 		System.out.println(personaConsultada);
 		
@@ -40,7 +40,7 @@ public class TestJPA {
 		*/
 		
 		/*CONSULTA TRUCHA*/
-		
+		/*
 		String nombre = "Carlos";
 		String clave = "carlos123";
 		
@@ -60,7 +60,7 @@ public class TestJPA {
 		System.out.println((Persona)consultaNativa.getSingleResult());
 		
 		
-		
+		*/
 		
 		
 		
