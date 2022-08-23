@@ -1,15 +1,17 @@
 package com.modelo.dao;
 
-import com.modelo.jdbcdao.JDBCDAOFactory;
+import com.modelo.jpa.JPADAOFactory;
 
 public abstract class DAOFactory {
-	protected static DAOFactory instancia = new JDBCDAOFactory();
-	
-	public static DAOFactory getFactory() {
-		return instancia;
-	}
-	
-	public abstract PersonaDAO getPersonaDAO();
-	public abstract DepartamentoDAO getDepartamentoDAO();
+    // Sería mejor por inyección de objetos
+    protected static DAOFactory factory = new JPADAOFactory();
+
+    public static DAOFactory getFactory() {
+        return factory;
+    }
+
+    public abstract PersonaDAO getPersonaDAO();
+
+
 
 }

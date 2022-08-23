@@ -1,45 +1,53 @@
 package com.controlador;
 
-/**
- * @author CI
- * @version 1.0
- * @created 08-ago-2022 16:26:04
- */
 import java.io.IOException;
+
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-@WebServlet("/ListarPersonasController")
-public class ListarPersonasController extends HttpServlet {
 
-private static final long serialVersionUID = 1L;
+import com.modelo.dao.DAOFactory;
+import com.modelo.entidades.Persona;
 
-	public ListarPersonasController(){
+@WebServlet("/listarPersonasController")
+public class ListarPersonasController extends HttpServlet{
 
+
+	private static final long serialVersionUID = 1L;
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		procesarSolicitud(req, resp);
 	}
 
-	/**
-	 * 
-	 * @param request
-	 * @param response
-	 */
-	public void doGet(HttpServletRequest request, HttpServletResponse response){
-		//1.- Obtener Parametros
-		//2.- Hablar con el Modelo
-		//3.- Hablar con la Vista
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		procesarSolicitud(req, resp);
 	}
-
-	/**
-	 * 
-	 * @param request
-	 * @param response
-	 */
-	public void doPost(HttpServletRequest request, HttpServletResponse response){
-		//1.- Obtener Parametros
-		//2.- Hablar con el Modelo
-		//3.- Hablar con la Vista
+	
+	private void procesarSolicitud(HttpServletRequest req, HttpServletResponse resp) {
+		
+		
+		try {
+			List<Persona> personas =DAOFactory.getFactory().getPersonaDAO().get();
+						
+			//Llamar a vista y entregar los datos
+			req.setAttribute("personas", personas);
+			getServletContext().getRequestDispatcher("/login/listarPersonas.jsp").forward(req, resp);
+			
+		} catch (ServletException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
+	
 
 }
