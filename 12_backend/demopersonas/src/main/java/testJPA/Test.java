@@ -6,7 +6,7 @@ import com.modelo.entidades.Persona;
 public class Test {
 
 	public static void main(String[] args) {
-		//crearPersona();
+		crearPersona();
 		//actualizarPersona();
 		listarPersona();
 		
