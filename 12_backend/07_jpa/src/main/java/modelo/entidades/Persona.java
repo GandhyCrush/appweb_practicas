@@ -2,11 +2,14 @@ package modelo.entidades;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity(name = "PERSONA")
 public class Persona implements Serializable{
@@ -21,6 +24,9 @@ public class Persona implements Serializable{
 	
 	@Column(name = "per_clave")
 	private String password;
+	
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private Facultad facultad;
 	
 	public Persona() {
 		
@@ -60,6 +66,16 @@ public class Persona implements Serializable{
 	@Override
 	public String toString() {
 		return "Persona: " + this.nombre;
+	}
+
+
+	public Facultad getFacultad() {
+		return facultad;
+	}
+
+
+	public void setFacultad(Facultad facultad) {
+		this.facultad = facultad;
 	}
 	
 	
