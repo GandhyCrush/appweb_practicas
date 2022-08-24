@@ -43,7 +43,7 @@
 				<tr>
 					<td>${persona.id}</td>
 					<td>${persona.nombre}</td>
-					<td>${persona.password}</td>
+					<td>${persona.clave}</td>
 					<td><a
 						href="ActualizarPersonaController?idPersona=${persona.id}">Actualizar</a>
 						| <a href="EliminarPersonaController?idPersona=${persona.id}">Eliminar</a></td>

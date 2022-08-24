@@ -17,30 +17,40 @@ public class LoginController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+		procesar(req, resp);
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// Validar que las credenciales de la persona sean válidas
+		procesar(request, response);
 
-		// 1.- Obtengo los parámetros
-		String usuario = request.getParameter("usuario");
-		String password = request.getParameter("password");
+	}
 
-		// 2.- Verifico que las idenficiaciones correspondne con una persona en la BDD
-
-		Persona personaAutenticada = DAOFactory.getFactory().getPersonaDAO().autorizarPersona(usuario, password);
-		
-
-		if (personaAutenticada != null) {
-			// Creamos la sesión
-			HttpSession misession = request.getSession(true);
-			misession.setAttribute("usuario", personaAutenticada);
-			request.getRequestDispatcher("listarPersonasController").forward(request, response);
+	private void procesar(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		if (request.getParameter("usuario") == null && request.getParameter("password") == null) {
+			request.getRequestDispatcher("jsp/login.jsp").forward(request, response);
 		} else {
-			response.sendRedirect("login/login.jsp");
+			System.out.println("ingreso");
+			// Validar que las credenciales de la persona sean válidas
+			// 1.- Obtengo los parámetros
+			String usuario = request.getParameter("usuario");
+			String password = request.getParameter("password");
+
+			// 2.- Verifico que las idenficiaciones correspondne con una persona en la BDD
+
+			Persona personaAutenticada = DAOFactory.getFactory().getPersonaDAO().autorizarPersona(usuario, password);
+
+			if (personaAutenticada != null) {
+				// Creamos la sesión
+				HttpSession misession = request.getSession(true);
+				misession.setAttribute("usuario", personaAutenticada);
+				request.getRequestDispatcher("listarPersonasController").forward(request, response);
+			} else {
+				System.out.println("al login");
+				request.getRequestDispatcher("jsp/login.jsp").forward(request, response);
+			}
 		}
 
 	}
